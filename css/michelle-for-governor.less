@@ -1,0 +1,198 @@
+
+
+:root {
+    --colorBlack: #000000;
+    --colorBlue: #331AE8;
+    --colorGray: #BFBFBF;
+    --colorRed: #F20F0F;
+}
+
+body {
+    font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    overflow-y: scroll;
+}
+
+#tickerContainer {
+    background-color: var(--colorRed);
+    display: flex;
+    overflow: hidden;
+
+    p {
+        animation-name: tickerSlide;
+        animation-duration: 12s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        color: white;
+        margin: 0;
+        padding: 12px;
+        transform: translateX(var(--tickerParagraphWidth));
+        white-space: nowrap;
+    }
+
+    a, a:hover {
+        color: var(--colorBlue);
+    }
+
+    .star {
+        margin: 0 6px;
+    }
+}
+
+@keyframes tickerSlide {
+
+    0% {
+        transform: translateX(0);
+    }
+}
+
+#logoTrademark {
+    display: flex;
+    padding: 48px;
+
+    img {
+        margin: auto;
+        max-width: 128px;
+    }
+}
+
+.selection-arrow {
+    width: 96px;
+
+    rect.arrow-body {
+        transform: translateX(-17px);
+    }
+}
+
+footer {
+    display: flex;
+    padding: 12px;
+
+    p {
+        color: #ccc;
+        font-size: .875rem;
+        margin: auto;
+    }
+}
+
+/* Bootstrap Overrides */
+
+.card {
+    border: none;
+    border-radius: 0;
+    margin: auto;
+    width: 80%;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+    &:first-of-type .card-header {
+        border-top-color: var(--colorBlack);
+    }
+
+    &:last-of-type .card-header {
+        border-bottom-color: transparent;
+    }
+
+    .card-header {
+        background-color: unset;
+        border: 1px transparent solid;
+        border-bottom-color: var(--colorBlack);
+        border-radius: 0;
+        padding: 0;
+
+        &:hover {
+            background-color: var(--colorGray);
+            border-bottom-color: var(--colorBlack);
+
+            .arrow-body {
+                transform: translateX(0);
+            }
+        }
+
+        .btn.btn-link {
+            border: none;
+            color: var(--colorBlack);
+            display: flex;
+            font-size: 1.6rem;
+            font-weight: 600;
+            justify-content: space-between;
+            padding: 12px 12px 36px;
+            width: 100%;
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+
+            span {
+                line-height: 1.3;
+                width: 72%;
+                text-align: left;
+                white-space: normal;
+            }
+        }
+    }
+}
+
+.carousel-grid {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: 768px) {
+        display: unset;
+    }
+}
+
+.carousel-control-nav {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+        margin-bottom: 12px;
+        position: unset;
+        width: unset;
+    }
+
+    a {
+        line-height: normal;
+        padding: 6px;
+    }
+}
+
+.carousel-item-text-block {
+    margin-bottom: 48px;
+    transform: translateY(48px);
+
+    @media screen and (max-width: 768px) {
+        margin-top: 12px;
+        margin-bottom: unset;
+        transform: translateX(0);
+    }
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: unset;
+    width: unset;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-image: none;
+
+    img {
+        max-height: 100%;
+    }
+}
+
+.carousel-control-next {
+    
+    .carousel-control-next-icon {
+        transform: rotate(180deg);
+    }
+}
