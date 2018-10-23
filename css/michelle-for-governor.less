@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     font-weight: 100;
     overflow-y: scroll;
@@ -27,16 +27,17 @@ body {
         color: white;
         margin: 0;
         padding: 12px;
+        letter-spacing: 8px;
         transform: translateX(var(--tickerParagraphWidth));
         white-space: nowrap;
     }
 
-    a, a:hover {
-        color: var(--colorBlue);
+    em, a {
+        letter-spacing: 0;
     }
 
-    .star {
-        margin: 0 6px;
+    a, a:hover {
+        color: var(--colorBlue);
     }
 }
 
