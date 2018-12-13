@@ -88,24 +88,21 @@ footer {
         width: 100%;
     }
 
-    &:first-of-type .card-header {
+    &:first-of-type .card-header .btn.btn-link {
         border-top-color: var(--colorBlack);
     }
 
-    &:last-of-type .card-header {
+    &:last-of-type .card-header .btn.btn-link {
         border-bottom-color: transparent;
     }
 
     .card-header {
         background-color: unset;
-        border: 1px transparent solid;
-        border-bottom-color: var(--colorBlack);
-        border-radius: 0;
+        border-bottom: none;
         padding: 0;
 
         &:hover {
             background-color: var(--colorGray);
-            border-bottom-color: var(--colorBlack);
 
             .arrow-body {
                 transform: translateX(0);
@@ -113,7 +110,9 @@ footer {
         }
 
         .btn.btn-link {
-            border: none;
+            border: 1px transparent solid;
+            
+            border-radius: 0;
             color: var(--colorBlack);
             display: flex;
             font-size: 1.6rem;
@@ -121,6 +120,10 @@ footer {
             justify-content: space-between;
             padding: 12px 12px 36px;
             width: 100%;
+
+            &.collapsed {
+                border-bottom-color: var(--colorBlack);
+            }
 
             &:hover, &:focus {
                 text-decoration: none;
@@ -138,6 +141,7 @@ footer {
 
 .card-body {
     overflow: auto;
+    padding: 0 12px 12px;
 
     img, p, nav {
         float: left;
@@ -148,9 +152,24 @@ footer {
         width: 10%;
 
         a {
-            color: var(--colorGray);
+            color: var(--colorBlack);
             display: block;
             text-align: right;
+        }
+
+        span {
+            color: var(--colorGray);
+
+            &:after {
+                content: ", ";
+            }
+
+            &:last-of-type {
+
+                &:after {
+                    content: "";
+                }
+            }
         }
     }
 
@@ -169,21 +188,7 @@ footer {
             margin-right: 0;
             width: 20%;
 
-            a {
-                display: inline-block;
-                text-align: left;
-
-                &:after {
-                    content: ", ";
-                }
-
-                &:last-of-type {
-
-                    &:after {
-                        content: "";
-                    }
-                }
-            }
+            
         }
     }
 
@@ -241,3 +246,6 @@ footer {
     }
 }
 
+#headingOne, .about-me-card {
+    background-color: var(--colorGray);
+}

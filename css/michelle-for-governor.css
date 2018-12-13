@@ -73,28 +73,26 @@ footer p {
     width: 100%;
   }
 }
-.card:first-of-type .card-header {
+.card:first-of-type .card-header .btn.btn-link {
   border-top-color: var(--colorBlack);
 }
-.card:last-of-type .card-header {
+.card:last-of-type .card-header .btn.btn-link {
   border-bottom-color: transparent;
 }
 .card .card-header {
   background-color: unset;
-  border: 1px transparent solid;
-  border-bottom-color: var(--colorBlack);
-  border-radius: 0;
+  border-bottom: none;
   padding: 0;
 }
 .card .card-header:hover {
   background-color: var(--colorGray);
-  border-bottom-color: var(--colorBlack);
 }
 .card .card-header:hover .arrow-body {
   transform: translateX(0);
 }
 .card .card-header .btn.btn-link {
-  border: none;
+  border: 1px transparent solid;
+  border-radius: 0;
   color: var(--colorBlack);
   display: flex;
   font-size: 1.6rem;
@@ -102,6 +100,9 @@ footer p {
   justify-content: space-between;
   padding: 12px 12px 36px;
   width: 100%;
+}
+.card .card-header .btn.btn-link.collapsed {
+  border-bottom-color: var(--colorBlack);
 }
 .card .card-header .btn.btn-link:hover,
 .card .card-header .btn.btn-link:focus {
@@ -115,6 +116,7 @@ footer p {
 }
 .card-body {
   overflow: auto;
+  padding: 0 12px 12px;
 }
 .card-body img,
 .card-body p,
@@ -126,9 +128,18 @@ footer p {
   width: 10%;
 }
 .card-body nav a {
-  color: var(--colorGray);
+  color: var(--colorBlack);
   display: block;
   text-align: right;
+}
+.card-body nav span {
+  color: var(--colorGray);
+}
+.card-body nav span:after {
+  content: ", ";
+}
+.card-body nav span:last-of-type:after {
+  content: "";
 }
 .card-body .card-info-section p,
 .card-body .card-info-section nav {
@@ -141,16 +152,6 @@ footer p {
 .card-body .card-info-section nav {
   margin-right: 0;
   width: 20%;
-}
-.card-body .card-info-section nav a {
-  display: inline-block;
-  text-align: left;
-}
-.card-body .card-info-section nav a:after {
-  content: ", ";
-}
-.card-body .card-info-section nav a:last-of-type:after {
-  content: "";
 }
 .card-body .card-gallery-section {
   display: grid;
@@ -200,4 +201,8 @@ footer p {
 .card-body.about-me-card p {
   padding: 0 24px;
   width: 50%;
+}
+#headingOne,
+.about-me-card {
+  background-color: var(--colorGray);
 }
