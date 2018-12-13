@@ -136,63 +136,75 @@ footer {
     }
 }
 
-.carousel-grid {
-    display: grid;
-    grid-gap: 24px;
-    grid-template-columns: repeat(2, 1fr);
+.card-body {
+    overflow: auto;
 
-    @media screen and (max-width: 768px) {
-        display: unset;
-    }
-}
-
-.carousel-control-nav {
-    display: flex;
-    position: absolute;
-    right: 0;
-    width: 50%;
-    z-index: 1;
-
-    @media screen and (max-width: 768px) {
-        justify-content: center;
-        margin-bottom: 12px;
-        position: unset;
-        width: unset;
+    img, p, nav {
+        float: left;
     }
 
-    a {
-        line-height: normal;
-        padding: 6px;
+    nav {
+        margin-right: 10%;
+        width: 10%;
+
+        a {
+            color: var(--colorGray);
+            display: block;
+            text-align: right;
+        }
     }
-}
 
-.carousel-item-text-block {
-    margin-bottom: 48px;
-    transform: translateY(48px);
+    .card-info-section {
 
-    @media screen and (max-width: 768px) {
-        margin-top: 12px;
-        margin-bottom: unset;
-        transform: translateX(0);
-    }
-}
-
-.carousel-control-next, .carousel-control-prev {
-    position: unset;
-    width: unset;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    background-image: none;
-
-    img {
-        max-height: 100%;
-    }
-}
-
-.carousel-control-next {
+        p, nav {
+            float: left;
+        }
     
-    .carousel-control-next-icon {
-        transform: rotate(180deg);
+        p {
+            padding-right: 24px;
+            width: 80%;
+        }
+    }
+
+    .card-gallery-section {
+        display: grid;
+        grid-auto-flow: dense;
+        width: 100%;
+
+        img {
+            display: block;
+            object-fit: contain;
+            max-width: 100%;
+
+            &.full {
+                grid-column: span 12;
+            }
+
+            &.half {
+                grid-column: span 6;
+            }
+
+            &.third {
+                grid-column: span 4;
+            }
+
+            &.fourth {
+                grid-column: span 3;
+            }
+        }
+    }
+
+    &.about-me-card {
+
+        img {
+            max-width: 100%;
+            width: 30%;
+        }
+
+        p {
+            padding: 0 24px;
+            width: 50%;
+        }
     }
 }
+
