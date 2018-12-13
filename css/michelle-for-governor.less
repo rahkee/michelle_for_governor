@@ -164,14 +164,36 @@ footer {
             padding-right: 24px;
             width: 80%;
         }
+
+        nav {
+            margin-right: 0;
+            width: 20%;
+
+            a {
+                display: inline-block;
+                text-align: left;
+
+                &:after {
+                    content: ", ";
+                }
+
+                &:last-of-type {
+
+                    &:after {
+                        content: "";
+                    }
+                }
+            }
+        }
     }
 
     .card-gallery-section {
         display: grid;
         grid-auto-flow: dense;
+        grid-gap: 24px;
         width: 100%;
 
-        img {
+        img, div.image-stacker {
             display: block;
             object-fit: contain;
             max-width: 100%;
@@ -190,6 +212,17 @@ footer {
 
             &.fourth {
                 grid-column: span 3;
+            }
+
+            @media screen and (max-width: 768px) {
+
+                &.full,
+                &.half,
+                &.third,
+                &.fourth {
+                    grid-column: span 12;
+                    margin: auto;
+                }
             }
         }
     }
