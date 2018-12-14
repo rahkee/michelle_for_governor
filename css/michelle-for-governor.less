@@ -12,238 +12,247 @@ body {
     overflow-y: scroll;
 }
 
-#tickerContainer {
-    background-color: @colorRed;
-    display: flex;
-    overflow: hidden;
+section#michelleForGovernorOverride {
+    font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    overflow-y: scroll;
 
-    p {
-        animation-name: tickerSlide;
-        animation-duration: 12s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        color: white;
-        margin: 0;
-        padding: 12px;
-        transform: translateX(var(--tickerParagraphWidth));
-        white-space: nowrap;
-    }
-
-    a, a:hover {
-        color: @colorBlue;
-    }
-
-    .star {
-        margin: 0 6px;
-    }
-}
-
-@keyframes tickerSlide {
-
-    0% {
-        transform: translateX(0);
-    }
-}
-
-#logoTrademark {
-    display: flex;
-    padding: 48px;
-
-    img {
-        margin: auto;
-        max-width: 128px;
-    }
-}
-
-.selection-arrow {
-    width: 96px;
-
-    rect.arrow-body {
-        transform: translateX(-17px);
-    }
-}
-
-footer {
-    display: flex;
-    padding: 12px;
-
-    p {
-        color: #ccc;
-        font-size: .875rem;
-        margin: auto;
-    }
-}
-
-/* Bootstrap Overrides */
-
-.card {
-    border: none;
-    border-radius: 0;
-    margin: auto;
-    width: 80%;
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-    }
-
-    &:first-of-type .card-header .btn.btn-link {
-        border-top-color: @colorBlack;
-    }
-
-    &:last-of-type .card-header .btn.btn-link {
-        border-bottom-color: transparent;
-    }
-
-    .card-header {
-        background-color: unset;
-        border-bottom: none;
-        padding: 0;
-
-        &:hover {
-            background-color: @colorGray;
-
-            .arrow-body {
-                transform: translateX(0);
-            }
-        }
-
-        .btn.btn-link {
-            border: 1px transparent solid;
-            
-            border-radius: 0;
-            color: @colorBlack;
-            display: flex;
-            font-size: 1.6rem;
-            font-weight: 600;
-            justify-content: space-between;
-            padding: 12px 12px 36px;
-            width: 100%;
-
-            &.collapsed {
-                border-bottom-color: @colorBlack;
-            }
-
-            &:hover, &:focus {
-                text-decoration: none;
-            }
-
-            span {
-                line-height: 1.3;
-                width: 72%;
-                text-align: left;
-                white-space: normal;
-            }
-        }
-    }
-}
-
-.card-body {
-    overflow: auto;
-    padding: 0 12px 12px;
-
-    img, p, nav {
-        float: left;
-    }
-
-    nav {
-        margin-right: 10%;
-        width: 10%;
-
-        a {
-            color: @colorBlack;
-            display: block;
-            text-align: right;
-        }
-
-        span {
-            color: @colorGray;
-
-            &:after {
-                content: ", ";
-            }
-
-            &:last-of-type {
-
-                &:after {
-                    content: "";
-                }
-            }
-        }
-    }
-
-    .card-info-section {
-
-        p, nav {
-            float: left;
-        }
+    #tickerContainer {
+        background-color: @colorRed;
+        display: flex;
+        overflow: hidden;
     
         p {
-            padding-right: 24px;
-            width: 80%;
+            animation-name: tickerSlide;
+            animation-duration: 12s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            color: white;
+            margin: 0;
+            padding: 12px;
+            transform: translateX(var(--tickerParagraphWidth));
+            white-space: nowrap;
         }
-
-        nav {
-            margin-right: 0;
-            width: 20%;
-
-            
+    
+        a, a:hover {
+            color: @colorBlue;
+        }
+    
+        .star {
+            margin: 0 6px;
         }
     }
-
-    .card-gallery-section {
-        display: grid;
-        grid-auto-flow: dense;
-        grid-gap: 24px;
-        width: 100%;
-
-        img, div.image-stacker {
-            display: block;
-            object-fit: contain;
-            max-width: 100%;
-
-            &.full {
-                grid-column: span 12;
-            }
-
-            &.half {
-                grid-column: span 6;
-            }
-
-            &.third {
-                grid-column: span 4;
-            }
-
-            &.fourth {
-                grid-column: span 3;
-            }
-
+    
+    @keyframes tickerSlide {
+    
+        0% {
+            transform: translateX(0);
+        }
+    }
+    
+    #logoTrademark {
+        display: flex;
+        padding: 48px;
+    
+        img {
+            margin: auto;
+            max-width: 128px;
+        }
+    }
+    
+    .selection-arrow {
+        width: 96px;
+    
+        rect.arrow-body {
+            transform: translateX(-17px);
+        }
+    }
+    
+    footer {
+        display: flex;
+        padding: 12px;
+    
+        p {
+            color: #ccc;
+            font-size: .875rem;
+            margin: auto;
+        }
+    }
+    
+    /* Bootstrap Overrides */
+    .accordion {
+        
+        .card {
+            border: none;
+            border-radius: 0;
+            margin: auto;
+            width: 80%;
+        
             @media screen and (max-width: 768px) {
-
-                &.full,
-                &.half,
-                &.third,
-                &.fourth {
-                    grid-column: span 12;
-                    margin: auto;
+                width: 100%;
+            }
+        
+            &:first-of-type .card-header .btn.btn-link {
+                border-top-color: @colorBlack;
+            }
+        
+            &:last-of-type .card-header .btn.btn-link {
+                border-bottom-color: transparent;
+            }
+        
+            .card-header {
+                background-color: unset;
+                border-bottom: none;
+                padding: 0;
+        
+                &:hover {
+                    background-color: @colorGray;
+        
+                    .arrow-body {
+                        transform: translateX(0);
+                    }
+                }
+        
+                .btn.btn-link {
+                    border: 1px transparent solid;
+                    
+                    border-radius: 0;
+                    color: @colorBlack;
+                    display: flex;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    justify-content: space-between;
+                    padding: 12px 12px 36px;
+                    width: 100%;
+        
+                    &.collapsed {
+                        border-bottom-color: @colorBlack;
+                    }
+        
+                    &:hover, &:focus {
+                        text-decoration: none;
+                    }
+        
+                    span {
+                        line-height: 1.3;
+                        width: 72%;
+                        text-align: left;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+        
+        .card-body {
+            overflow: auto;
+            padding: 0 12px 12px;
+        
+            img, p, nav {
+                float: left;
+            }
+        
+            nav {
+                margin-right: 10%;
+                width: 10%;
+        
+                a {
+                    color: @colorBlack;
+                    display: block;
+                    text-align: right;
+                }
+        
+                span {
+                    color: @colorGray;
+        
+                    &:after {
+                        content: ", ";
+                    }
+        
+                    &:last-of-type {
+        
+                        &:after {
+                            content: "";
+                        }
+                    }
+                }
+            }
+        
+            .card-info-section {
+        
+                p, nav {
+                    float: left;
+                }
+            
+                p {
+                    padding-right: 24px;
+                    width: 80%;
+                }
+        
+                nav {
+                    margin-right: 0;
+                    width: 20%;
+        
+                    
+                }
+            }
+        
+            .card-gallery-section {
+                display: grid;
+                grid-auto-flow: dense;
+                grid-gap: 24px;
+                width: 100%;
+        
+                img, div.image-stacker {
+                    display: block;
+                    object-fit: contain;
+                    max-width: 100%;
+        
+                    &.full {
+                        grid-column: span 12;
+                    }
+        
+                    &.half {
+                        grid-column: span 6;
+                    }
+        
+                    &.third {
+                        grid-column: span 4;
+                    }
+        
+                    &.fourth {
+                        grid-column: span 3;
+                    }
+        
+                    @media screen and (max-width: 768px) {
+        
+                        &.full,
+                        &.half,
+                        &.third,
+                        &.fourth {
+                            grid-column: span 12;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        
+            &.about-me-card {
+        
+                img {
+                    max-width: 100%;
+                    width: 30%;
+                }
+        
+                p {
+                    padding: 0 24px;
+                    width: 50%;
                 }
             }
         }
     }
-
-    &.about-me-card {
-
-        img {
-            max-width: 100%;
-            width: 30%;
-        }
-
-        p {
-            padding: 0 24px;
-            width: 50%;
-        }
+    
+    #headingOne, .about-me-card {
+        background-color: @colorGray;
     }
-}
-
-#headingOne, .about-me-card {
-    background-color: @colorGray;
 }
