@@ -1,11 +1,9 @@
 
 
-:root {
-    --colorBlack: #000000;
-    --colorBlue: #331AE8;
-    --colorGray: #BFBFBF;
-    --colorRed: #F20F0F;
-}
+@colorBlack: #000;
+@colorBlue: #331AE8;
+@colorGray: #BFBFBF;
+@colorRed: #F20F0F;
 
 body {
     font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
@@ -15,7 +13,7 @@ body {
 }
 
 #tickerContainer {
-    background-color: var(--colorRed);
+    background-color: @colorRed;
     display: flex;
     overflow: hidden;
 
@@ -32,7 +30,7 @@ body {
     }
 
     a, a:hover {
-        color: var(--colorBlue);
+        color: @colorBlue;
     }
 
     .star {
@@ -89,7 +87,7 @@ footer {
     }
 
     &:first-of-type .card-header .btn.btn-link {
-        border-top-color: var(--colorBlack);
+        border-top-color: @colorBlack;
     }
 
     &:last-of-type .card-header .btn.btn-link {
@@ -102,7 +100,7 @@ footer {
         padding: 0;
 
         &:hover {
-            background-color: var(--colorGray);
+            background-color: @colorGray;
 
             .arrow-body {
                 transform: translateX(0);
@@ -113,7 +111,7 @@ footer {
             border: 1px transparent solid;
             
             border-radius: 0;
-            color: var(--colorBlack);
+            color: @colorBlack;
             display: flex;
             font-size: 1.6rem;
             font-weight: 600;
@@ -122,7 +120,7 @@ footer {
             width: 100%;
 
             &.collapsed {
-                border-bottom-color: var(--colorBlack);
+                border-bottom-color: @colorBlack;
             }
 
             &:hover, &:focus {
@@ -152,13 +150,13 @@ footer {
         width: 10%;
 
         a {
-            color: var(--colorBlack);
+            color: @colorBlack;
             display: block;
             text-align: right;
         }
 
         span {
-            color: var(--colorGray);
+            color: @colorGray;
 
             &:after {
                 content: ", ";
@@ -247,5 +245,5 @@ footer {
 }
 
 #headingOne, .about-me-card {
-    background-color: var(--colorGray);
+    background-color: @colorGray;
 }
